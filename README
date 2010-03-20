@@ -1,0 +1,15 @@
+Mumble statistics
+=================
+A php project to visualize Mumble usage data.
+
+Copyright 2009-2010 Sascha Jüngling <sjuengling@gmail.com>
+
+INSTALL/SETUP:
+
+In order for this script to work, you need to have a file called "db_credentials.php" in the
+document root, which initializes the variables $db_name, $db_host, $db_user, and $db_pass with
+the according values to access the mumble usage data.
+
+The "cache/" folder and its files need to be writable by the webserver, for caching to work.
+
+License information will follow, as soon as I have made up my mind about it. ;)
