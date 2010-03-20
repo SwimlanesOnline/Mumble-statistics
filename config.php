@@ -1,10 +1,7 @@
 <?php
 
 // Database information
-$db_name = '';
-$db_host = '';
-$db_user = '';
-$db_pass = '';
+require("db_credentials.php");
 
 // Output performance info or not
 $SILENCE = /**/ TRUE /*/ FALSE /**/;
