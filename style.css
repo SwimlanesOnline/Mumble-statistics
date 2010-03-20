@@ -1,0 +1,44 @@
+.menu_frame {
+  padding-bottom:0.4em;
+  border-bottom:0.1em solid black;
+}
+
+a.menu {
+  float:left;
+  padding:0.2em;
+  border:0.1em solid black;
+  border-bottom:0;
+
+}
+
+a.menu_shown {
+  background-color:#D3D3D3; /* lightgrey */
+}
+
+a.menu_hidden {
+  background-color:#fff;
+}
+
+a.menu_margin {
+  margin-left:1em;
+}
+
+a.menu_hidden:hover {
+  background-color:#B0C4DE; /* lightsteelblue */
+  font-weight:bold;
+}
+
+html, body {
+  height: 97.2%;
+  margin-bottom:0em;
+  padding-bottom:0em;
+}
+
+.clear:after
+{
+  height:1%;
+  clear:both;
+  content:".";
+  height:0;
+  visibility:hidden;
+}
