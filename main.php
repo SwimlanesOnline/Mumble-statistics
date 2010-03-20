@@ -3,7 +3,7 @@
 $noCache = FALSE;
 // If a cached version is available, output it to the user. Save the one which
 // is generated here as the new cache and deliver it next time it's called.
-if(file_exists($CACHE.$page.".htm")) {
+if(in_array($page, $PAGES) && file_exists($CACHE.$page.".htm")) {
 
     if(count($_GET) < 2) {
         $fp = fopen($CACHE.$page.".htm", 'r');
@@ -181,39 +181,39 @@ share($lcd);
     echo "<br /><a href=\"index.php?page=main\">Remove filter</a>";
   
   // If we have errors to show, do so
-  echo displayErrors();
+  echo displayErrors($err);
   
   ?>
   <div style="width:75em">
   <div style="float:left; display:inline;">
     <h2>Mumble version/snapshot</h2>
-    <?php echo mkTbl($snapshot); ?>
+    <?php echo mkTbl($snapshot, $multiplier, $builds); ?>
     
     <h2>Operating System</h2>
-    <?php echo mkTbl($os, "osver"); ?>
+    <?php echo mkTbl($os, $multiplier, $builds, "osver"); ?>
     
     <h2>Platform</h2>
-    <?php echo mkTbl($platform, "os"); ?>
+    <?php echo mkTbl($platform, $multiplier, $builds, "os"); ?>
     
     <h2>Qt Version</h2>
-    <?php echo mkTbl($qt); ?>
+    <?php echo mkTbl($qt, $multiplier, $builds); ?>
     
     <h2>Input System</h2>
-    <?php echo mkTbl($insys); ?>
+    <?php echo mkTbl($insys, $multiplier, $builds); ?>
     
     <h2>Output System</h2>
-    <?php echo mkTbl($outsys); ?>
+    <?php echo mkTbl($outsys, $multiplier, $builds); ?>
   </div>
   
   <div style="float:right; display:inline;">
     <h2>Geo distribution</h2>
-    <?php echo mkTbl($geo); ?>
+    <?php echo mkTbl($geo, $multiplier, $builds); ?>
       
     <h2>OS Type</h2>
-    <?php echo mkTbl($is64); ?>
+    <?php echo mkTbl($is64, $multiplier, $builds); ?>
     
     <h2>LCD enabled</h2>
-    <?php echo mkTbl($lcd); ?>
+    <?php echo mkTbl($lcd, $multiplier, $builds); ?>
   </div>
   </div>
   
@@ -243,7 +243,7 @@ share($lcd);
 <?php
     // Cache the current run, if it wasn't filtered
     if(count($_GET) < 2)
-        mkCache($page);
+        mkCache($page, $CACHE);
     
     // Clean the output buffer, and ...
     if($noCache || count($_GET) > 1) // If no cache was available at site call

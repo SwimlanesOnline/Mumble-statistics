@@ -28,7 +28,7 @@ unset($db_user); unset($db_pass); unset($db_name);
 
 
 // Check if requested file exists, include and execute the script from $_REQUEST
-if(file_exists($page.".php")) {
+if(in_array($page, $PAGES) && file_exists($page.".php")) {
 
     // If a cached version exists and it's younger than a day, use it
     if(count($_GET) < 2 && file_exists($CACHE.$page.".htm") &&

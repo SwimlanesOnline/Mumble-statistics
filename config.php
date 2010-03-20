@@ -8,6 +8,9 @@ $SILENCE = /**/ TRUE /*/ FALSE /**/;
 //            ^
 // Add or remove a forward-slash at this position to switch between true/false
 
+// Valid pages to include
+$PAGES = array('main');
+
 // Save cached pages in this dir
 $CACHE = "cache/";
 
