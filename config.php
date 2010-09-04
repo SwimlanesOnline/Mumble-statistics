@@ -14,14 +14,14 @@ $PAGES = array('main');
 // Save cached pages in this dir
 $CACHE = "cache/";
 
-// Script libraries locatoin
+// Script libraries location
 $SYS = "sys/";
 
 // Length a 100% bar would have (in px)
 $multiplier = 300;
 
 // Default timespan for statistics (use MySQL date format)
-$interval = "31 day"; // half a year
+$interval = "31 day"; // one month
 
 // Translations for OS build numbers
 $builds = array(
@@ -31,10 +31,14 @@ $builds = array(
   "6.0.6001.1" => "Vista SP1",
   "6.0.6002.1" => "Vista SP2",
   "6.0.6001.0" => "Server 2008",
+  "6.0.6002.0" => "Server 2008 SP2",
   "5.2.3790.0" => "Server 2003",
-  "5.1.2600.1" => "XP SP 2",
-  "5.2.3790.1" => "XP Pro 64",
+  "5.1.2600.1" => "XP",
+  "5.2.3790.1" => "XP 64 bit",
   "6.1.7000.1" => "7 Beta",
+  "6.1.7600.1" => "7",
+  "6.1.7600.0" => "Server 2008 R2",
+  "5.0.2195.1" => "2000",
 );
 
 // Translations for db columns

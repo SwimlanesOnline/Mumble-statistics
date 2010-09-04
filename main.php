@@ -70,11 +70,11 @@ else
   $timewhere = "";
   
 // Count total # of datasets - narrow down if filters are applied  
-$query = "SELECT COUNT(*) FROM musage WHERE client = 1".$timewhere.$where;
+$query = "SELECT COUNT(id) FROM musage WHERE client = 1".$timewhere.$where;
 $total = $db->fetch_atom($query);
 
 // Get all the stats...
-$query = "SELECT SUBSTRING(compiled FROM 1 FOR 7) as compiled,COUNT(compiled) as count FROM musage WHERE seen >= NOW() - INTERVAL ".$interval." AND client = 1 AND compiled NOT LIKE 'Compiled %' ".$where." GROUP BY compiled HAVING count > 4 ORDER BY compiled DESC";
+$query = "SELECT SUBSTRING(compiled FROM 1 FOR 7) as compiled,COUNT(compiled) as count FROM musage WHERE seen >= NOW() - INTERVAL ".$interval." AND client = 1 AND compiled NOT LIKE 'Compiled %' ".$where." GROUP BY compiled HAVING count > 4 ORDER BY count ASC";
 $snapshot = $db->fetch_table($query);
 share($snapshot);
 

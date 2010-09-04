@@ -42,7 +42,7 @@ if(in_array($page, $PAGES) && file_exists($page.".php")) {
     require("404.php");
 }
 
-// Evaluate execution times
+// Evaluate execution times and debug
 if(!$SILENCE) {
 
     if(!is_writable($CACHE))
